@@ -1,4 +1,4 @@
-function atualizar Relogio() {
+function atualizarRelogio() {
 const agora = new Date();
   
 let horas = agora.getHours().toString().padStart (2, '0');
