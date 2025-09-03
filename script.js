@@ -10,7 +10,6 @@ const horaAtual = `$(horas):$(minutos):$(segundos)`;
 document.getElementById('clock').textContent = horaAtual;
 
 }
-
 // Atualiza imediatamente e depois a cada segundo 
 atualizarRelogio();
 setInterval (atualizarRelogio, 1000);
