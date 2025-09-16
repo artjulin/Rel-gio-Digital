@@ -1,35 +1,24 @@
-body {
-    background: #202020;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+const horasElemento = document.getElementById('horas');
+const minutosElemento = document.getElementById('minutos');
+const segundosElemento = document.getElementById('segundos');
+
+function atualizarRelogio() {
+    const data = new Date();
+    let horas = data.getHours();
+    let minutos = data.getMinutes();
+    let segundos = data.getSeconds();
+
+    horas = horas < 10 ? '0' + horas : horas;
+    minutos = minutos < 10 ? '0' + minutos : minutos;
+    segundos = segundos < 10 ? '0' + segundos : segundos;
+
+    horasElemento.textContent = horas;
+    minutosElemento.textContent = minutos;
+    segundosElemento.textContent = segundos;
 }
 
-.relogio {
-    display: flex;
-    gap: 20px;
-    background: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
+// Atualiza o relógio a cada segundo (1000 milissegundos)
+setInterval(atualizarRelogio, 1000);
 
-.relogio div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.relogio span {
-    font-size: 4em;
-    font-weight: bold;
-}
-
-.relogio .tempo {
-    font-size: 1.2em;
-    text-transform: uppercase;
-}
+// Chama a função uma vez para exibir a hora imediatamente ao carregar a página
+atualizarRelogio();
