@@ -1,29 +1,35 @@
-function atualizarRelogio() {
-
-const agora = new Date();
-
-  
-
-let horas = agora.getHours().toString().padStart (2, '0');
-
-let minutos = agora.getMinutes().toString().padStart (2, '0');
-
-let segundos = agora.getSeconds().toString().padStart (2, '0');
-
-  
-
-const horaAtual = `$(horas):$(minutos):$(segundos)`;
-
-  
-
-document.getElementById('clock').textContent = horaAtual;
-
-
-
+body {
+    background: #202020;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-// Atualiza imediatamente e depois a cada segundo 
+.relogio {
+    display: flex;
+    gap: 20px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 
-atualizarRelogio();
+.relogio div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-setInterval (atualizarRelogio, 1000);
+.relogio span {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.relogio .tempo {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
